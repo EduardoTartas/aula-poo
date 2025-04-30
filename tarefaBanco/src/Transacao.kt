@@ -1,6 +1,6 @@
 import java.util.*
 
-class Transacao(val valor: Double, val data: Date) {
+class Transacao(val valor: Double, val data: String) {
     // IdTransacao é privado para limitar o acesso somente à classe.
     private val idTransacao: String = UUID.randomUUID().toString();
 
