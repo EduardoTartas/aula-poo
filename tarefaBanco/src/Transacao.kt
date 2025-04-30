@@ -1,6 +1,6 @@
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
-import java.util.*
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
 
 class Transacao(private val valor: Double) {
     // IdTransacao é privado para limitar o acesso somente à classe.
