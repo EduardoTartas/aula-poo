@@ -11,7 +11,7 @@ class Banco(val nome: String) {
         this.agencias.remove(agencia);
     }
 
-    fun obterAgencia(nome: String): Agencia? {
+    fun obterAgencia(nome: String): Agencia?{
         return this.agencias.find{it.nome == nome};
     }
 }
