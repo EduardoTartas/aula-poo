@@ -1,13 +1,14 @@
 class Cliente(val idCliente: String, val nome: String){
 
+    //Endereço é privado para limitar o acesso somente à classe.
     private lateinit var endereco: String
 
-    //função para obter o nome do cliente
+    //Método para obter o nome do cliente.
     fun obterNome():String{
         return this.nome;
     }
 
-    //função publica para mudar o endereço do cliente
+    //Método públicos que permite a manipulação externa do enderço.
     fun definirEndereco(endereco: String){
         this.endereco = endereco;
     }
