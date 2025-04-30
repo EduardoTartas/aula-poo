@@ -1,15 +1,22 @@
-class Cliente(val idCliente: String, val nome: String){
+import java.util.*;
 
-    // Endereço é privado para limitar o acesso somente à classe.
-    private lateinit var endereco: String
+class Cliente(private val nome: String) {
+    private val idCliente: String = UUID.randomUUID().toString();
+    private lateinit var endereco: String;
 
-    // Método para obter o nome do cliente.
-    fun obterNome():String{
-        return this.nome;
+    fun obterNome(): String {
+        println("Nome do cliente é: $nome");
+        return nome;
     }
 
-    // Método públicos que permite a manipulação externa do enderço.
-    fun definirEndereco(endereco: String){
+    fun definirEndereco(endereco: String) {
         this.endereco = endereco;
+        println("Endereço definido como: $endereco");
+    }
+
+    fun imprimirDetalhesCliente() {
+        println("ID Cliente: $idCliente");
+        println("Nome: $nome");
+        println("Endereço: $endereco");
     }
 }
