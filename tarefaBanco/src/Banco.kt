@@ -1,8 +1,8 @@
 class Banco(val nome: String) {
-    // A lista de agencias deve ser privada para que só possa ser acessada ou alterada por metodos dentro da propria classe
+    // A lista de agencias é privada para limitar o acesso somente à classe.
     private var agencias: MutableList<Agencia> = mutableListOf() ;
 
-    //metodos publicos para serem acessados de fora da classe
+    // Métodos públicos que permitem a manipulação externa da lista de agencias.
      fun adicionarAgencia(agencia: Agencia){
         this.agencias.add(agencia);
     }
