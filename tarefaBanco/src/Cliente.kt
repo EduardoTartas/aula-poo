@@ -2,7 +2,7 @@ import java.util.*;
 
 class Cliente(private val nome: String) {
     private val idCliente: String = UUID.randomUUID().toString();
-    private lateinit var endereco: String;
+    private var endereco: String = "";
 
     fun obterNome(): String {
         println("Nome do cliente é: $nome");
