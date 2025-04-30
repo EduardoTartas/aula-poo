@@ -4,14 +4,32 @@ class Agencia(val nome: String) {
 
     // Métodos públicos que permitem a manipulação externa da lista de contas.
     fun adicionarConta(conta: Conta){
-        this.contas.add(conta);
+        if (this.contas.none { it.numeroConta == conta.numeroConta }) {
+            this.contas.add(conta);
+            println("Conta ${conta.numeroConta} adicionada com sucesso!");
+        } else {
+            println("Conta ${conta.numeroConta} já existe nesse agencia!");
+        }
     }
 
     fun removerConta(conta: Conta){
-        this.contas.remove(conta);
+        if (!this.contas.none { it.numeroConta == conta.numeroConta }) {
+            this.contas.remove(conta);
+            println("Conta ${conta.numeroConta} removida com sucesso!");
+        } else {
+            println("Conta ${conta.numeroConta} não existe nesse banco!");
+        }
     }
 
     fun obterConta(numero: String): Conta?{
-        return this.contas.find{it.numeroConta == numero}
+        val conta = this.contas.find { it.numeroConta == numero };
+        if (conta != null) {
+            println("Conta ${conta.numeroConta} encontrada com sucesso!");
+            return conta;
+        } else {
+            println("Conta $numero não foi encontrada")
+        }
+        return conta;
     }
 }
+
